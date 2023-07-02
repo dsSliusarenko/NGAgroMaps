@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NGAgroMaps';
+
+  isReady: boolean = false;
+  constructor() {
+    this.isReady = true;
+  }
 }
