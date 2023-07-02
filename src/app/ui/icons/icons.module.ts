@@ -18,7 +18,7 @@ export class IconModule {
     private domSanitizer: DomSanitizer
   ) {
     matIconRegistry.addSvgIcon(
-      'home',
+      'planet',
       domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mat-planet.svg'),
     );
   }
