@@ -1,13 +1,37 @@
 .app {
+  $self: &;
+
+  &:host {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
 
   &__container {
     flex: 1 1 auto;
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    height: 100%;
 
     > * + * {
       border-left: 1px solid rgba(black, .12);
     }
+  }
+
+
+  &__navigation {
+    width: 25%;
+    background-color: #212939;
+    overflow: auto;
+    color: white;
+
+  }
+
+  &__content {
+    padding: 1rem;
+    width: 100%;
   }
 }

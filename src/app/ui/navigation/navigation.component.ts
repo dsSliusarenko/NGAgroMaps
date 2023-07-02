@@ -20,7 +20,7 @@ const navigationItems: Navigation[] = [
     icon: 'planet',
   },
   {
-    label: 'Test',
+    label: 'Test2',
     path: 'test2',
     isHeadline: false,
     icon: 'planet',
