@@ -1,14 +1,13 @@
 @import "src/app/styles/variables.scss";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, serif; font-style: normal; line-height: 20px; }
+body { margin: 0; font-family: Roboto, serif; font-style: normal; line-height: 20px; font-weight: 500;}
 
 .navigation {
   &__headline {
     margin-left: 1.5rem;
     color: $gray-navigation-headline;
     font-size: 12px;
-    font-weight: 500;
   }
 
   &__icon {
