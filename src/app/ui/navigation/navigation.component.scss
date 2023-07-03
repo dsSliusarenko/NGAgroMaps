@@ -1,36 +1,6 @@
-.navigation {
-  color: white;
-
-  &__headline {
-    margin-left: 1.5rem;
-    color: rgba(255, 255, 255, 0.70);
-    font-size: 12px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-  }
-
-  &__icon {
-    color: white;
-    margin-left: 2rem;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
-
-  &__text {
-    color: white;
-    margin-left: 0.5rem;
-    vertical-align: middle;
-    font-size: 14px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-  }
-}
+@import "src/app/styles/variables.scss";
 
 .is-active {
   border-radius: 0 22px 22px 0;
-  background: #1976D2;
+  background: $blue-is-active;
 }
