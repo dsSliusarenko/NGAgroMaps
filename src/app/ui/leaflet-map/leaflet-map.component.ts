@@ -1,5 +1,6 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, Input} from '@angular/core';
 import * as L from "leaflet";
+import {MapConfig} from "./map";
 
 @Component({
   selector: 'nga-leaflet-map',
@@ -7,13 +8,12 @@ import * as L from "leaflet";
   styleUrls: ['./leaflet-map.component.scss']
 })
 export class LeafletMapComponent implements AfterViewInit {
+  @Input() mapConfig!: MapConfig;
+
   private map!: L.Map | L.LayerGroup<any>;
 
   private initMap(): void {
-    this.map = L.map('map', {
-      center: [ 51.049999, -114.066666 ],
-      zoom: 14
-    });
+    this.map = L.map('map', this.mapConfig);
 
     const tiles = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 18,

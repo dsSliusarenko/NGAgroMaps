@@ -1,0 +1,15 @@
+.nga-map {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #5dff00;
+
+  &__leaflet {
+    height: 66%;
+  }
+
+  &__blocks {
+    height: 20%;
+    background-color: #1976D2;
+  }
+}

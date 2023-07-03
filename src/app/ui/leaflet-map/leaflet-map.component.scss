@@ -1,17 +1,12 @@
-.map-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 30px;
-}
+.map {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
 
-.map-frame {
-  border: 2px solid black;
-  height: 100%;
-}
-
-#map {
-  height: 100%;
+  &__element {
+    flex: 1;
+  }
 }
