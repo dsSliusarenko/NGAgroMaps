@@ -1,18 +1,12 @@
 <mat-nav-list *ngIf="navigationList$ | async as navigationList">
   <ng-container *ngFor="let listItem of navigationList">
     <span class="navigation__headline"
-          *ngIf="listItem.isHeadline; else showMenuItem">{{ listItem?.label | uppercase}}</span>
+          *ngIf="listItem.isHeadline; else showMenuItem">{{ listItem?.label | uppercase }}</span>
     <ng-template #showMenuItem>
-      <div class="navigation__item">
-        <div class="icon">
-          <mat-icon class="navigation__listIcon" [svgIcon]="listItem?.icon ?? ''"></mat-icon>
-        </div>
-        <div class="link">
-          <a mat-list-item class="nav-item">
-            <span class="nav-item-text">{{listItem?.label}}</span>
-          </a>
-        </div>
-      </div>
+      <a mat-list-item [routerLink]="'/'+listItem?.path" routerLinkActive="is-active">
+        <mat-icon class="navigation__icon" [svgIcon]="listItem?.icon ?? ''"></mat-icon>
+        <span class="navigation__text">{{listItem?.label}}</span>
+      </a>
     </ng-template>
   </ng-container>
 </mat-nav-list>

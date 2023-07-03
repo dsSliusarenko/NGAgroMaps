@@ -10,20 +10,20 @@ interface Navigation {
 
 const navigationItems: Navigation[] = [
   {
-    label: 'Section',
+    label: 'fields',
     isHeadline: true,
   },
   {
-    label: 'Test',
-    path: 'test1',
+    label: 'Map Overview',
+    path: 'overview/map',
     isHeadline: false,
     icon: 'planet',
   },
   {
-    label: 'Test2',
-    path: 'test2',
+    label: 'List',
+    path: 'overview/list',
     isHeadline: false,
-    icon: 'planet',
+    icon: 'field',
   }
 ];
 
@@ -32,8 +32,7 @@ const navigationItems: Navigation[] = [
   templateUrl: 'navigation.component.html',
   styleUrls: ['navigation.component.scss']
 })
-export class NavigationComponent implements OnInit{
-
+export class NavigationComponent implements OnInit {
   navigationList$: Observable<Navigation[]> | undefined;
 
   constructor() {

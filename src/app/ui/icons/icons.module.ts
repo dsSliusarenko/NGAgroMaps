@@ -21,5 +21,9 @@ export class IconModule {
       'planet',
       domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mat-planet.svg'),
     );
+    matIconRegistry.addSvgIcon(
+      'field',
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mat-field.svg'),
+    );
   }
 }
