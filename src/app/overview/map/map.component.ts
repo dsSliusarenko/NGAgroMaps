@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-map',
+  selector: 'nga-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
