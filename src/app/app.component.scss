@@ -19,18 +19,26 @@
     > * + * {
       border-left: 1px solid rgba(black, .12);
     }
-  }
 
+    .navigation {
+      width: 20%;
+      background-color: #212939;
+      overflow: auto;
+      color: white;
+    }
 
-  &__navigation {
-    width: 20%;
-    background-color: #212939;
-    overflow: auto;
-    color: white;
-  }
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
 
-  &__content {
-    padding: 1rem;
-    width: 100%;
+      &__header {
+      }
+
+      &__view {
+        height: 100%;
+        padding: 1rem;
+      }
+    }
   }
 }

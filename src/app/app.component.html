@@ -1,8 +1,13 @@
 <ng-container *ngIf="isReady">
   <div class="app__container">
-    <nga-navigation class="app__navigation"></nga-navigation>
-    <div class="app__content">
-      <router-outlet></router-outlet>
+    <nga-navigation class="navigation"></nga-navigation>
+    <div class="content">
+      <div class="content__header">
+        <nga-header></nga-header>
+      </div>
+      <div class="content__view">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </ng-container>
