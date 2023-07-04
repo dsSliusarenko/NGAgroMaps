@@ -1,6 +1,7 @@
-import {AfterViewInit, Component, EventEmitter, Input, Output} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import * as L from "leaflet";
-import {MapConfig} from "./map";
+import {defaultMapConfig, defaultTileLayer, defaultTileLayerOptions, MapConfig} from "./map";
+import {LeafletMapService} from "./leaflet-map.service";
 
 @Component({
   selector: 'nga-leaflet-map',
@@ -8,34 +9,27 @@ import {MapConfig} from "./map";
   styleUrls: ['./leaflet-map.component.scss']
 })
 export class LeafletMapComponent implements AfterViewInit {
-  @Input() mapConfig!: MapConfig;
+  mapConfig: MapConfig | undefined = defaultMapConfig;
+  map!: L.Map;
 
-  @Output() lastCoords: EventEmitter<L.LatLng> = new EventEmitter();
+  constructor(private leafletMapService: LeafletMapService) {
+    if (this.mapConfig?.center !== this.leafletMapService.getNewMapConfig() && this.leafletMapService.getNewMapConfig() !== undefined) {
+      this.mapConfig = this.leafletMapService.getNewMapConfig();
+    }
+  }
 
-  private map!: L.Map;
-
-  private initMap(): void {
+  initMap(): void {
     this.map = L.map('map', this.mapConfig);
 
-    const tiles: L.TileLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      maxZoom: 18,
-      minZoom: 3,
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-    });
-
-    // const objectsNames: L.TileLayer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}{r}.{ext}', {
-    //   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    //   minZoom: 0,
-    //   maxZoom: 20,
-    //   //@ts-ignore
-    //   ext: 'png'
-    // });
+    const tiles: L.TileLayer = L.tileLayer(defaultTileLayer, defaultTileLayerOptions);
 
     tiles.addTo(this.map);
-    // objectsNames.addTo(this.map);
-    
+
     this.map.on('dragend', () => {
-      this.lastCoords.emit(this.map.getCenter());
+      this.leafletMapService.setNewMapConfig({
+        center: this.map.getCenter(),
+        zoom: this.map.getZoom()
+      });
     });
   }
 
