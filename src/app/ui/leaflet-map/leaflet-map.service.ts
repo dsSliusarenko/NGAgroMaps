@@ -1,6 +1,5 @@
 import {Injectable} from "@angular/core";
-import {BehaviorSubject, Observable} from "rxjs";
-import * as L from "leaflet";
+import {BehaviorSubject} from "rxjs";
 import {MapConfig} from "./map";
 
 @Injectable({
