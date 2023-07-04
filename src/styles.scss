@@ -1,7 +1,16 @@
 @import "src/app/styles/variables.scss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, serif; font-style: normal; line-height: 20px; font-weight: 500;}
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, serif;
+  font-style: normal;
+  line-height: 20px;
+  font-weight: 500;
+}
 
 .navigation {
   &__headline {
@@ -32,6 +41,57 @@ body { margin: 0; font-family: Roboto, serif; font-style: normal; line-height: 2
 }
 
 .profile-section {
-  height: 16rem;
+  display: flex;
+  flex-direction: column;
   background-color: $blue-profile-section-background;
+
+  &__logo {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+
+    .avatar {
+      margin-left: 1rem;
+    }
+
+    .slogan {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  &__avatar {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .name {
+      margin-top: 0.75rem;
+      color: white;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .email {
+      margin-top: 0.5rem;
+      color: $gray-profile-section-email;
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+
+  &__buttons {
+    margin: 0.5rem 0 0.5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }

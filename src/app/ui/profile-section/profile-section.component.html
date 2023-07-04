@@ -1,3 +1,28 @@
 <div class="profile-section">
-  test
+  <div class="profile-section__logo">
+    <img class="avatar" ngSrc="/assets/images/logo.png" alt="" height="60" width="60">
+    <span class="slogan">Angular</span>
+  </div>
+  <div class="profile-section__avatar">
+    <img class="avatar" ngSrc="/assets/images/avatar.webp" alt="" height="72" width="72">
+  </div>
+  <div class="profile-section__info">
+    <div class="name">
+      <span>Dave Williams</span>
+    </div>
+    <div class="email">
+      <span>dave.williams@gmail.com</span>
+    </div>
+  </div>
+  <div class="profile-section__buttons">
+    <button mat-icon-button>
+      <mat-icon class="button" [svgIcon]="'calendar'"></mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon class="button" [svgIcon]="'back-up'"></mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon class="button" [svgIcon]="'logout'"></mat-icon>
+    </button>
+  </div>
 </div>
